@@ -1,19 +1,20 @@
 .completedChallengesContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Dividindo os dois elementos de texto cada um para cantos diferentes (um para esquerda ou para direita) */
+  margin: 3.5rem 0;
+  padding-bottom: 1rem;
 
-    margin: 3.5rem 0;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #d7d8da;
+  border-bottom: 1px solid #d7d8da;
 
-    font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-weight: 500;
 }
 
-.completedChallengesContainer span:first-child { /*:first-child - pegara somente o primeiro span */
-    font-size: 1.25rem;
+.completedChallengesContainer span:first-child {
+  font-size: 1.25rem;
 }
 
-.completedChallengesContainer span:last-child { /* :last-child - pegara somente o ultimo span */
-    font-size: 1.5rem;
+.completedChallengesContainer span:last-child {
+  font-size: 1.5rem;
 }

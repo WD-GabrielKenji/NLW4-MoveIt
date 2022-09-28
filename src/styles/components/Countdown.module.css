@@ -1,80 +1,79 @@
-.countdownContainer{
-    display: flex;
-    align-items: center;
-    font-family: Rajdhani;
-    font-weight: 600;
-    color: var(--title);
+.countdownContainer {
+  display: flex;
+  align-items: center;
+
+  color: var(--title);
+  font-family: Rajdhani;
+  font-weight: 600;
 }
 
-.countdownContainer > div {
-    flex: 1;
+.countdownContainer>div {
+  background: var(--white);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-evenly;
 
-    background: var(--white);
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
-    font-size: 8.5rem;
-    text-align: center;
+  font-size: 8.5rem;
+  text-align: center;
 }
 
-.countdownContainer > div span{
-    flex: 1;
+.countdownContainer>div span {
+  flex: 1;
 }
 
-.countdownContainer > div span:first-child{
-    border-right: 1px solid #f0f1f3;
+.countdownContainer>div span:first-child {
+  border-right: 1px solid #f0f1f3;
 }
 
-.countdownContainer > div span:last-child{
-    border-left: 1px solid #f0f1f3;
+.countdownContainer>div span:last-child {
+  border-left: 1px solid #f0f1f3;
 }
 
-.countdownContainer > span{
-    font-size: 6.25rem;
-    margin: 0 0.5rem;
+.countdownContainer>span {
+  margin: 0 0.5rem;
+  font-size: 6.25rem;
 }
 
-.countdownButton{
-    width: 100%;
-    height: 5rem;
+.countdownButton {
+  width: 100%;
+  height: 5rem;
+  margin-top: 2rem;
 
-    margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: var(--blue);
+  border: 0;
+  border-radius: 5px;
+  
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 600;
 
-    border: 0;
-    border-radius: 5px;
-
-    background: var(--blue);
-    color: var(--white);
-
-    font-size: 1.25rem;
-    font-weight: 600;
-
-    transition: backgroung-color 0.2s; /* Adicionando um timing para quando houver uma transição da cor do botão mudar durar entre 0.2s */
+  transition: backgroung-color 0.2s;
 }
 
-.countdownButton:not(:disabled):hover { /* :not(:disabled) verifica o hover esta desabilitado / hover é o efeito onde quando o mouse passar por cima do botão apresentara os efeitos configurados aqui */
-    background: var(--blue-dark);
+.countdownButton:not(:disabled):hover {
+  background: var(--blue-dark);
 }
 
-.countdownButtonActive{
-    background: var(--white);
-    color: var(--title);
+.countdownButtonActive {
+  background: var(--white);
+  color: var(--title);
 }
 
-.countdownButtonActive:not(:disabled):hover{
-    background: var(--red);
-    color: var(--white);
+.countdownButtonActive:not(:disabled):hover {
+  background: var(--red);
+  color: var(--white);
 }
 
-.countdownButton:disabled{ /* Verificando se o Botão esta desabilitado e reatribuindo e atribuindo algumas propriedades de estilo */
-    background: var(--white);
-    color: var(--text);
-    cursor: not-allowed;
+.countdownButton:disabled {
+  background: var(--white);
+  color: var(--text);
+  cursor: not-allowed;
 }

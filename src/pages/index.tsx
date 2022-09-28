@@ -1,28 +1,29 @@
 // Arquivo da Home principal:
-import { CompletedChallenges } from "../components/CompletedChallenges";
-import { Countdown } from "../components/Countdown";
-import { ExperienceBar } from "../components/ExperienceBar";
-import { Profile } from "../components/Profile"
-import { ChallengeBox } from "../components/ChallengeBox";
-import { CountdownProvider } from "../contexts/CountdownContext";
-import Head from 'next/head';
 import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 
-import styles from "../styles/pages/Home.module.css"
+import { CountdownProvider } from "../contexts/CountdownContext";
+import { CompletedChallenges } from "../components/CompletedChallenges";
+
+import { Profile } from "../components/Profile"
+import { ExperienceBar } from "../components/ExperienceBar";
+import { Countdown } from "../components/Countdown";
+import { ChallengeBox } from "../components/ChallengeBox";
+
+import styles from "../styles/pages/Home.module.css";
 import { ChallengesPorvider } from "../contexts/ChallengesContext";
 
-interface HomeProps { // Tipando o props
+interface HomeProps {
   level: number;
   currentExperience: number;
   challengesCompleted: number;
 }
 
 export default function Home(props: HomeProps) {
-
-  return ( // Interface
-    <ChallengesPorvider 
-      level={props.level} 
-      currentExperience={props.currentExperience} 
+  return (
+    <ChallengesPorvider
+      level={props.level}
+      currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
       <div className={styles.container}>
@@ -30,15 +31,16 @@ export default function Home(props: HomeProps) {
           <title>Inicio | Move.it</title>
         </Head>
 
-        <ExperienceBar /> 
+        <ExperienceBar />
 
         <CountdownProvider>
           <section>
             <div>
               <Profile />
-              <CompletedChallenges/>
+              <CompletedChallenges />
               <Countdown />
             </div>
+            
             <div>
               <ChallengeBox />
             </div>
@@ -46,19 +48,13 @@ export default function Home(props: HomeProps) {
         </CountdownProvider>
       </div>
     </ChallengesPorvider>
-    
-  )
-  // <section> ou até a <div> são boas para serem feitas as divisões no layout da Pagina
+  );
 }
 
-// Essa método faz uma chamada a API que busca alguns dados para serem preenchidos na interface / E não podemos fazer uma chamada de API de dentro do componente acima, pois os dados não estarão presentes quando os motores de busca acessarem a aplicação, porque os motores de busca não irão aguardar a chamada ser finaliza, por conta do Next não fazer a chamada antes de ter a interface pronta primeiro.
-export const getServerSideProps: GetServerSideProps = async (ctx) => { // Esta função precisa ser exatamente com esse mesmo nome "getServerSideProps" / E precisa ser "async (assincrona)" para funcionar por causa da tipagem do Next.js / Recebe um parametro "ctx" para ter acesso tanto no Browser como no Banco de dados
-  // Tudo que é aplicado aqui dentro desse método so funciona no servidor do Node!
-  // Passamos aqui as chamadas para pegar os dados
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
 
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies; // Pegando todos os cookies da aplicação
-
-  return { // Aqui retornamos os dados para a interface montar e apresentar em tela
+  return {
     props: {
       level: Number(level),
       currentExperience: Number(currentExperience),
@@ -66,4 +62,3 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => { // Esta f
     }
   }
 }
-

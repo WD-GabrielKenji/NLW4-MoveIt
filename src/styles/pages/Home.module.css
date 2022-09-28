@@ -1,18 +1,16 @@
-.container{
-    height: 100vh; /* "vh (Viewport Height)" Faz com que o container ocupe 100% da altura da tela disponivel */
-    max-width: 992px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
 
-    display: flex;
-    flex-direction: column; /* Deixa os elementes proximos elementos um baixo do outro apos a ExprienceBar */
+  display: flex;
+  flex-direction: column;
 }
 
-.container > section {
-    flex: 1;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Para que as duas colunas tenham o mesmo lado horizontal */
-    gap: 6.25rem; /* 6.25rem = 100px no desktop / Diminuindo caso estaja numa tela menor */
-    align-content: center; /* Faz com que os conteudos dos grid sejam alinhados verticalmente no centro */ 
+.container>section {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  gap: 6.25rem;
 }
