@@ -22,8 +22,8 @@
 
 ## :computer: <strong id="projeto">Sobre o Projeto </strong>
 
-<img src="./public/to_readme/ilustracao.png" width="98%"/>
-<img src="./public/to_readme/ilustracao2.png" width="49%"/><img src="./public/to_readme/ilustracao3.png" width="49%"/>
+<img src="./public/to_readme/ilustracao.png" width="100%"/>
+<img src="./public/to_readme/ilustracao2.png" width="100%"/> <img src="./public/to_readme/ilustracao3.png" width="100%"/>
 
 <p align="justify">O <strong>Move.it</strong> é uma aplicação que une a <strong><a href="https://www.napratica.org.br/pomodoro/">técnica de Pomodoro</a></strong> com a realização de atividade física, ou seja, para quem passa muito tempo na frente do computador nunca se esquecer de cuidar da sua saúde.</p>
 
